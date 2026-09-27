@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Robin Khan — Real Estate Growth Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#152238;
+    --ink-soft:#4b5a71;
+    --paper:#ffffff;
+    --paper-warm:#efeee8;
+    --brass:#b4863b;
+    --brass-deep:#7d5a22;
+    --line:#dedcd3;
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); line-height:1.5;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
+
+  /* Nav */
+  header.site{
+    position:sticky; top:0; z-index:10; background:rgba(255,255,255,.92);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1080px; margin:0 auto;}
+  .brand{font-family:var(--serif); font-weight:600; font-size:1.15rem; letter-spacing:.01em; text-decoration:none;}
+  .navlinks{display:flex; gap:28px; font-size:.92rem; font-weight:500;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
+  .navlinks a:hover{color:var(--ink);}
+  @media (max-width:640px){ .navlinks{display:none;} }
+
+  /* Hero */
+  .hero{padding:88px 0 64px;}
+  .hero-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:56px; align-items:end;}
+  @media (max-width:800px){ .hero-grid{grid-template-columns:1fr;} }
+  .eyebrow{color:var(--brass-deep); font-weight:600; font-size:.9rem; margin:0 0 18px;}
+  h1{
+    font-family:var(--serif); font-weight:600; font-size:clamp(2.3rem,5vw,3.6rem);
+    line-height:1.08; margin:0 0 22px; max-width:15ch;
+  }
+  .hero-sub{font-size:1.08rem; color:var(--ink-soft); max-width:46ch; margin:0 0 30px;}
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 26px; border-radius:2px; font-weight:600;
+    font-size:.95rem; text-decoration:none; transition:transform .15s, box-shadow .15s;
+  }
+  .btn-primary{background:var(--ink); color:#fff;}
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(21,34,56,.25);}
+  .btn-ghost{border:1px solid var(--ink); color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:#fff;}
+  .hero-card{
+    border:1px solid var(--line); padding:26px; font-size:.9rem; color:var(--ink-soft);
+  }
+  .hero-card p{margin:0 0 10px;}
+  .hero-card strong{color:var(--ink);}
+
+  /* Stat strip */
+  .stats{background:var(--ink); color:#fff; padding:40px 0;}
+  .stats-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; text-align:center;}
+  @media (max-width:640px){ .stats-grid{grid-template-columns:1fr;} }
+  .stat-num{font-family:var(--serif); font-size:2.4rem; color:var(--brass); font-weight:600;}
+  .stat-label{font-size:.88rem; color:#c7cedb; margin-top:4px;}
+
+  section{padding:80px 0;}
+  .section-head{max-width:52ch; margin:0 0 42px;}
+  .section-head h2{font-family:var(--serif); font-weight:600; font-size:clamp(1.6rem,3vw,2.2rem); margin:0 0 12px;}
+  .section-head p{color:var(--ink-soft); margin:0;}
+
+  /* Services */
+  .services{background:var(--paper-warm);}
+  .service-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  @media (max-width:800px){ .service-grid{grid-template-columns:1fr;} }
+  .service{background:var(--paper-warm); padding:32px;}
+  .service h3{font-family:var(--serif); font-size:1.2rem; margin:0 0 10px;}
+  .service p{color:var(--ink-soft); font-size:.94rem; margin:0 0 14px;}
+  .taglist{list-style:none; margin:0; padding:0; font-size:.85rem; color:var(--ink-soft);}
+  .taglist li{padding:5px 0; border-top:1px solid var(--line);}
+  .taglist li:first-child{border-top:none;}
+
+  /* Platforms */
+  .platform-row{display:flex; flex-wrap:wrap; gap:10px 14px; font-size:.92rem; color:var(--ink-soft);}
+  .platform-row span{border:1px solid var(--line); padding:7px 14px;}
+
+  /* Process */
+  .process-list{border-top:1px solid var(--line);}
+  .process-item{
+    display:grid; grid-template-columns:64px 200px 1fr; gap:20px; align-items:baseline;
+    padding:22px 0; border-bottom:1px solid var(--line);
+  }
+  @media (max-width:700px){ .process-item{grid-template-columns:40px 1fr; grid-template-areas:"n t" ". d";} }
+  .process-num{font-family:var(--serif); color:var(--brass); font-size:1.1rem;}
+  .process-title{font-weight:600; letter-spacing:.02em;}
+  .process-desc{color:var(--ink-soft); font-size:.95rem;}
+
+  /* Brokerages */
+  .broker-row{
+    display:flex; flex-wrap:wrap; gap:14px 34px; font-family:var(--serif); font-size:1.1rem; color:var(--ink-soft);
+  }
+
+  /* CTA / contact */
+  .contact{background:var(--ink); color:#fff;}
+  .contact .section-head h2{color:#fff;}
+  .contact .section-head p{color:#c7cedb;}
+  .contact-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:48px;}
+  @media (max-width:800px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact p{color:#dfe3ea; max-width:48ch;}
+  .contact-info{border:1px solid #33425c; padding:28px; font-size:.95rem;}
+  .contact-info div{padding:10px 0; border-top:1px solid #33425c;}
+  .contact-info div:first-child{border-top:none; padding-top:0;}
+  .contact-info small{display:block; color:#94a2b8; margin-bottom:3px;}
+  .contact-info a{color:var(--brass); text-decoration:none; font-weight:600;}
+
+  footer{padding:26px 0; font-size:.82rem; color:var(--ink-soft); border-top:1px solid var(--line);}
+  .foot-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="#top">Robin Khan</a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Real estate growth support</p>
+        <h1>Pipelines don't leak from a lack of leads. They leak from a lack of follow-up.</h1>
+        <p class="hero-sub">I'm Robin — a backend growth partner for busy agents and teams. I run the prospecting, the CRM discipline, and the follow-up systems, so you can spend your time on showings, negotiations, and closings.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:shahnewajkhanrobin@gmail.com">Start a conversation</a>
+          <a class="btn btn-ghost" href="#services">See what I handle</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <p><strong>3.5+ years</strong> supporting U.S. real estate professionals</p>
+        <p><strong>2,500+</strong> qualified appointments secured</p>
+        <p><strong>Multi-market</strong> experience across U.S. real estate and lead types</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div><div class="stat-num">3.5+</div><div class="stat-label">Years specialized experience</div></div>
+      <div><div class="stat-num">2,500+</div><div class="stat-label">Qualified appointments secured</div></div>
+      <div><div class="stat-num">2+</div><div class="stat-label">Years hands-on CRM experience</div></div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What I handle behind the scenes</h2>
+        <p>Support built around your business — not a generic script.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service">
+          <h3>Prospecting &amp; cold calling</h3>
+          <p>Structured conversations with a conversion goal, not just dialing.</p>
+          <ul class="taglist">
+            <li>Owner &amp; investor outreach</li>
+            <li>Local farming / geo-circle calling</li>
+            <li>Expired, canceled &amp; FSBO listings</li>
+            <li>Pre-foreclosure prospects</li>
+            <li>Buyer calling &amp; broker recruiting</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>CRM management</h3>
+          <p>Turning your database into a working pipeline, not a filing cabinet.</p>
+          <ul class="taglist">
+            <li>Daily / weekly / monthly follow-up</li>
+            <li>Call logging, tagging &amp; segmentation</li>
+            <li>Nurture sequences &amp; reactivation</li>
+            <li>Database cleaning &amp; lead assignment</li>
+            <li>Skip tracing for hard-to-reach leads</li>
+          </ul>
+        </div>
+        <div class="service">
+          <h3>Marketing &amp; admin</h3>
+          <p>The materials and day-to-day tasks that keep a pipeline visible.</p>
+          <ul class="taglist">
+            <li>Listing &amp; open-house flyers</li>
+            <li>Social media content &amp; scheduling</li>
+            <li>Market update posts</li>
+            <li>Buyer search &amp; alert setup</li>
+            <li>General VA / admin support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="platforms">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Comfortable in your CRM</h2>
+        <p>I adapt to the systems you already run on.</p>
+      </div>
+      <div class="platform-row">
+        <span>Follow Up Boss</span><span>Lofty</span><span>Top Producer</span><span>Vulcan7</span>
+        <span>Espresso Agent</span><span>Vortex</span><span>Chime</span><span>Archagent</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How we'll work together</h2>
+        <p>A simple backend system that keeps prospecting and follow-up moving.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-item"><span class="process-num">01</span><span class="process-title">Target</span><span class="process-desc">Define the property, owner, or buyer profile worth pursuing.</span></div>
+        <div class="process-item"><span class="process-num">02</span><span class="process-title">Reach</span><span class="process-desc">Cold call, follow up, and qualify seller, buyer, or investor intent.</span></div>
+        <div class="process-item"><span class="process-num">03</span><span class="process-title">Organise</span><span class="process-desc">CRM updates, tagging, pipeline stages, and action plans.</span></div>
+        <div class="process-item"><span class="process-num">04</span><span class="process-title">Nurture</span><span class="process-desc">Automated and manual follow-up until a lead is ready to talk.</span></div>
+        <div class="process-item"><span class="process-num">05</span><span class="process-title">Book</span><span class="process-desc">Turn qualified conversations into confirmed appointments.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="brokerages">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Experience across brands</h2>
+        <p>I've supported agents and teams associated with:</p>
+      </div>
+      <div class="broker-row">
+        <span>Keller Williams</span><span>Coldwell Banker</span><span>eXp Realty</span><span>RE/MAX</span><span>and more</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="markets">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Markets I've worked</h2>
+        <p>Direct prospecting and CRM experience across these U.S. states.</p>
+      </div>
+      <div class="platform-row">
+        <span>Florida</span><span>Ohio</span><span>California</span><span>Georgia</span>
+        <span>Texas</span><span>Tennessee</span><span>New York</span><span>and more</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="section-head">
+          <h2>Let's build your next growth system</h2>
+        </div>
+        <p>Looking to increase listing appointments, improve lead conversion, organise your CRM, or expand into investment markets? Let's talk about where your pipeline is leaking — and how I can support the backend.</p>
+      </div>
+      <div class="contact-info">
+        <div><small>Email</small><a href="mailto:shahnewajkhanrobin@gmail.com">shahnewajkhanrobin@gmail.com</a></div>
+        <div><small>WhatsApp</small><a href="https://wa.me/8801771842722">+880 1771-842722</a></div>
+        <div><small>Based in</small>Remote — supporting U.S. real estate teams</div>
+        <div><small>Focus</small>Cold calling · CRM · Lead generation · Marketing</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>Robin Khan — Real Estate Growth Support</span>
+    <span>Cold Calling · CRM · Lead Generation · Marketing Systems</span>
+  </div>
+</footer>
+
+</body>
+</html>
