@@ -127,6 +127,33 @@
   .contact-info small{display:block; color:#94a2b8; margin-bottom:3px;}
   .contact-info a{color:var(--brass); text-decoration:none; font-weight:600;}
 
+  /* Packages */
+  .pricing-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:800px){ .pricing-grid{grid-template-columns:1fr;} }
+  .price-card{
+    border:1px solid var(--line); background:var(--paper); padding:32px 28px;
+    display:flex; flex-direction:column;
+  }
+  .price-card.featured{
+    border-color:var(--ink); box-shadow:0 14px 34px rgba(21,34,56,.12); position:relative;
+  }
+  .price-badge{
+    position:absolute; top:-13px; left:28px; background:var(--brass); color:#fff;
+    font-size:.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    padding:4px 12px;
+  }
+  .price-card h3{font-family:var(--serif); font-size:1.25rem; margin:0 0 6px;}
+  .price-card .price-tag{
+    font-family:var(--serif); font-size:2.1rem; font-weight:600; color:var(--brass-deep); margin:6px 0 4px;
+  }
+  .price-card .price-tag span{font-family:var(--sans); font-size:.85rem; font-weight:500; color:var(--ink-soft);}
+  .price-card .price-note{font-size:.85rem; color:var(--ink-soft); margin:0 0 22px;}
+  .price-list{list-style:none; margin:0 0 26px; padding:0; font-size:.92rem; flex-grow:1;}
+  .price-list li{padding:8px 0; border-top:1px solid var(--line); display:flex; gap:9px;}
+  .price-list li:first-child{border-top:none;}
+  .price-list li::before{content:"✓"; color:var(--brass-deep); font-weight:700; flex-shrink:0;}
+  .price-card .btn{text-align:center;}
+
   footer{padding:26px 0; font-size:.82rem; color:var(--ink-soft); border-top:1px solid var(--line);}
   .foot-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
 </style>
@@ -140,6 +167,7 @@
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#platforms">Platforms</a>
+      <a href="#packages">Packages</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -267,6 +295,53 @@
       <div class="platform-row">
         <span>Florida</span><span>Ohio</span><span>California</span><span>Georgia</span>
         <span>Texas</span><span>Tennessee</span><span>New York</span><span>and more</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="packages">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Packages</h2>
+        <p>Simple, hourly pricing — start small or go all-in on a full growth system.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <div class="price-tag">$6<span>/ hour</span></div>
+          <p class="price-note">For agents who just need consistent dialing.</p>
+          <ul class="price-list">
+            <li>Cold calling &amp; prospecting</li>
+            <li>Owner, investor &amp; buyer outreach</li>
+            <li>Call notes shared after each session</li>
+          </ul>
+          <a class="btn btn-ghost" href="mailto:shahnewajkhanrobin@gmail.com">Get started</a>
+        </div>
+        <div class="price-card featured">
+          <span class="price-badge">Most popular</span>
+          <h3>Standard</h3>
+          <div class="price-tag">$8<span>/ hour</span></div>
+          <p class="price-note">Calling plus the CRM discipline to back it up.</p>
+          <ul class="price-list">
+            <li>Everything in Starter</li>
+            <li>CRM management &amp; database cleanup</li>
+            <li>Structured follow-up sequences</li>
+            <li>Lead qualification &amp; tagging</li>
+          </ul>
+          <a class="btn btn-primary" href="mailto:shahnewajkhanrobin@gmail.com">Get started</a>
+        </div>
+        <div class="price-card">
+          <h3>Premium</h3>
+          <div class="price-tag">$10<span>/ hour</span></div>
+          <p class="price-note">A full backend growth &amp; marketing partner.</p>
+          <ul class="price-list">
+            <li>Everything in Standard</li>
+            <li>Social media management &amp; content scheduling</li>
+            <li>Flyer &amp; listing/open-house marketing</li>
+            <li>Market update posts &amp; branding support</li>
+          </ul>
+          <a class="btn btn-ghost" href="mailto:shahnewajkhanrobin@gmail.com">Get started</a>
+        </div>
       </div>
     </div>
   </section>
